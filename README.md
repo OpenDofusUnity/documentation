@@ -75,3 +75,34 @@ Les utilisateurs peuvent ajouter des plugins à un jeu en plaçant les fichiers 
 #### Support des Mods :
 
 BepInEx facilite l'utilisation de mods et de plugins en fournissant des outils pour les développeurs de mods. Les développeurs peuvent écrire des plugins pour ajouter ou modifier des fonctionnalités dans les jeux sans avoir à modifier les fichiers du jeu directement.
+
+
+## Gestion des structures de données: Protobuf
+
+Qu'est-ce que Protobuf ?
+Protobuf est un format de sérialisation de données qui permet de définir des structures de données et de les encoder/décoder en un format binaire. Développé par Google, il est utilisé pour la communication entre différents services, le stockage de données, et dans d'autres situations nécessitant une représentation structurée des données.
+
+<ins>Le format binaire de Protobuf est plus compact que les formats de sérialisation textuels, ce qui réduit la taille des données et améliore les performances en termes de vitesse de traitement et de bande passante.</ins>
+
+![image](https://github.com/user-attachments/assets/6b24b3e5-0696-4201-aedf-46b13b9c3802)
+
+### Définition des Données :
+
+Les structures de données sont définies dans des fichiers de définition `(.proto)` en utilisant une syntaxe simple et déclarative. Ces fichiers décrivent les types de données, les champs, et les relations entre les champs.
+
+#### Exemple de fichier .proto :
+```proto
+syntax = "proto3";
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+}
+```
+### Sérialisation et Désérialisation :
+
+* Sérialisation : Convertit des objets en un format binaire compact pour le stockage ou le transfert. Ce format est plus petit et plus rapide à traiter que les formats textuels comme JSON ou XML.
+* Désérialisation : Reconvertit le format binaire en objets utilisables dans le code. Cela permet de lire et d'utiliser les données après les avoir reçues ou chargées.
+
+Protobuf prend en charge plusieurs langages de programmation, y compris C++, Java, Python, C#, Go, et bien d'autres. Cela facilite l'échange de données entre systèmes développés dans différents langages.
