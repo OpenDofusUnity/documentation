@@ -17,5 +17,36 @@ OpenDofusUnity est un wiki sur la personnalisation du jeu Dofus Unity.
 Vous pouvez contribuer a ce wiki en créant un fork de celui-ci. Modifiez ce que vous souhaitez améliorer puis créez un Pull Request vers ce dépot. Les Pull Request seront ensuite relus et validé par les contributeurs direct du projet.
 
 ## Questions et erreurs
-
 Si vous avez une question où que vous souhaiter signaler une erreur dans le wiki, vous pouvez créer également un message dans la section [Issues](https://github.com/OpenDofus/wiki/issues) avec les labels "Question" et "Erreur".
+
+
+## Protocole Réseau
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Client
+    participant Network
+    participant Server
+
+    Note over Client, Server: OSI Layer
+
+    Client->>Client: Layer 7 Ankama Message Protocol
+    Client->>Client: Layer 6 Protobuf Serialization
+    Client->>Client: Layer 5 TCP Session Management
+    Client->>Client: Layer 4 TCP Socket, Port Multiplexing<br>Port: Ephemeral Port
+    Client->>Client: Layer 3 IP Dest: dofus2-co-beta.ankama-games.com<br>IP Src: Client IP
+    Client->>Client: Layer 2 MAC Addr
+    Client->>Client: Layer 1 Physical/Binary
+
+    Client->>Network: Transmit
+
+    Network->>Server: Receive
+    Server->>Server: Layer 1 Physical/Binary
+    Server->>Server: Layer 2 MAC Addr
+    Server->>Server: Layer 3 IP Dest & Src
+    Server->>Server: Layer 4 TCP Socket, Port Multiplexing<br>Port: 5555 or 443
+    Server->>Server: Layer 5 TCP Session Management
+    Server->>Server: Layer 6 Protobuf Serialization
+    Server->>Server: Layer 7 Ankama Message Protocol
+```
