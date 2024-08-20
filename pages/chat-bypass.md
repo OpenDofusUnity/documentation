@@ -13,8 +13,20 @@ Lors de l'arrivée du chat fonctionne in-game, un premier bypass était possible
 
 ![image](https://github.com/user-attachments/assets/f070f8de-f216-4048-968c-40582e77ef1f)
 
-## Deuxième bypass (16/08/2024-17/08/2024)
-Suite au premier bypass commençant à être abusé dans le chat, un patch a été publié.
+## Deuxième byppass (16/08/2024-17/08/2024)
+Suite au premier bypass commençant à être abusé dans le chat, un patch a rapidement été publié le soir même.
+
+Ce patch rajoute deux balises, `<noparse>` au début du message, et `</noparse>` à la fin. Ces balises sont censés empecher l'interprétation de balises a l'intérieur mais n'empeche pas les injections.
+Il a été rapide de bypass ce patch en utilisant une balise `</noparse>` prématurée.
+
+```html
+</noparse><mark color="#6897BB">x</mark><mark color="#F2F3F3">x</mark><mark color="#7C0002">x</mark>
+```
+
+![image](https://github.com/user-attachments/assets/f070f8de-f216-4048-968c-40582e77ef1f)
+
+## Troisième bypass (17/08/2024-18/08/2024)
+Suite au deuxième bypass commençant à être abusé dans le chat, un patch a été publié.
 
 Ce patch à rajouter principalement 2 principes : 
 Interdiction de l'envoi d'un message avec la chaine `</` et remplacement de la chaine `<noparse>` par du vide.
@@ -26,10 +38,10 @@ Grâce à ce remplacement, on a pu mettre en place un nouveau bypass :
 
 ![image](https://github.com/user-attachments/assets/f070f8de-f216-4048-968c-40582e77ef1f)
 
-Dans `<<noparse>/noparse>` la chaine `</` n'est pas trouvée donc le message peut être envoyé, et `<noparse>` est remplacé par du vide, ce qui fait qu'on se retrouve au final avec une chaine `</noparse>` qui revient à notre premier exploit qui avait été patché.
+Dans `<<noparse>/noparse>` la chaine `</` n'est pas trouvée donc le message peut être envoyé, et `<noparse>` est remplacé par du vide, ce qui fait qu'on se retrouve au final avec une chaine `</noparse>` qui revient à notre deuxième exploit qui avait été patché.
 
-## Troisième bypass (17/08/2024-Now)
-Suite a ce deuxième bypass, un deuxième patch a été mis en place le samedi midi qui interdit cette fois entièrement les chaines `<noparse>` et `</noparse>`.
+## Quatrième bypass (18/08/2024-Now)
+Suite à ce troisième bypass, un troisième patch a été mis en place le 18/08/2024 qui interdit cette fois entièrement les chaines `<noparse>` et `</noparse>`.
 
 Un autre bypass a été trouvé en rajoutant un simple espace : 
 ```html
