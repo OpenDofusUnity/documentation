@@ -95,7 +95,10 @@ TCP (Transmission Control Protocol) est un protocole de communication de niveau 
 #### Comment tout cela se relie ?
 <ins>Préfixe de longueur avec Varint :</ins> Pour éviter toute confusion dans le flux de données reçu via TCP, chaque message Protobuf est souvent précédé par sa longueur encodée en Varint. Cela permet à l'application réceptrice de savoir où un message commence et finit dans le flux continu.
 
-### Exemple de Déserialisation
+### Exemple de Déserialisation: Connexion au Serveur Beta
+
+![image](https://github.com/user-attachments/assets/ce31bbc1-2909-4b64-9797-c4d58c8ef68d)
+
 
 <details>
 <summary>Message.proto</summary>
