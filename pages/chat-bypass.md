@@ -5,10 +5,10 @@ Ils ont le désavantage de nécessiter des protections car les balises utilisée
 
 On peut retrouver toutes les balises utilisables dans les TextMeshPro dans [la documentation officielle de Unity](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/RichText.html)
 
-## Problèmes posés par cette vulnérabilités
+## Problèmes posés par cette vulnérabilité
 Ces injections posent principalement un problème de phishing, mais aussi de lisibilité du chat.
 
-Grâce à ces injections, il est possible de se faire passer par un autre utilisateur, écrire des messages ressemblant à des messages systèmes, mettre des liens sans passer par la popup anti-phishing du client, etc.
+Grâce à ces injections, il est possible de se faire passer pour un autre utilisateur, écrire des messages ressemblant à des messages systèmes, mettre des liens sans passer par la popup anti-phishing du client, etc.
 
 Tant que ces bypass existent, faites très important a n'importe quel lien dans le chat (sorts, item, utilisateur, guild, etc.) qui peuvent être des liens malveillant (menant à des sites web de phishing ou de contenu choquant par exemple).
 
