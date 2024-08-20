@@ -88,7 +88,7 @@ Protobuf prend en charge plusieurs langages de programmation, y compris C++, Jav
 ### Rôle de TCP
 TCP (Transmission Control Protocol) est un protocole de communication de niveau transport (Layer 4) qui gère la transmission fiable de flux de données entre deux machines. TCP assure que les paquets sont livrés dans l'ordre et sans perte, <ins>mais il ne segmente pas automatiquement les messages structurés comme ceux créés avec Protobuf</ins>. Ainsi, lorsqu'un message Protobuf est envoyé via TCP :
 
-* Fragmentation et Réassemblage : TCP peut fragmenter les données du message en plusieurs paquets si elles sont trop grandes, mais il garantit que ces fragments seront réassemblés dans l'ordre avant de les fournir à l'application réceptrice.
+* Fragmentation et Réassemblage : TCP peut fragmenter les données du message en plusieurs paquets si elles sont trop grandes, mais il garantit que ces fragments seront réassemblés dans l'ordre avant de les fournir à l'application.
 
 * Flux de données : Comme TCP traite un flux continu de données sans délimiter explicitement les messages, c'est à l'application de gérer la délimitation des messages.
 
